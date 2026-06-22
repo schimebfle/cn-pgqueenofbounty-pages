@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赏金女王 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf8f5;
+      font-family: 'Georgia', 'Times New Roman', 'Songti SC', serif;
+      color: #2f2e2a;
+      line-height: 1.7;
+      padding: 0 1.2rem;
+    }
+
+    .page-wrap {
+      max-width: 780px;
+      margin: 2.8rem auto 4rem;
+      background: #fffcf9;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+    }
+
+    /* 导航 */
+    .nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid #e7e2d9;
+      margin-bottom: 2.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #5b554a;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+
+    .nav a:hover {
+      color: #b2824a;
+    }
+
+    /* 标题区 */
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #3a3329;
+      margin-bottom: 0.6rem;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #7d7568;
+      margin-bottom: 2.2rem;
+      border-left: 3px solid #d6c9b8;
+      padding-left: 1.4rem;
+      font-style: italic;
+    }
+
+    /* 正文排版 */
+    p {
+      margin-bottom: 1.3rem;
+      text-align: justify;
+    }
+
+    a {
+      color: #7a5f3e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #d6c5ae;
+    }
+
+    a:hover {
+      text-decoration-color: #b2824a;
+      color: #5f472b;
+    }
+
+    /* 提示框 / 引用块 */
+    .insight-box {
+      background: #f3ede6;
+      border-left: 6px solid #c8b69b;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0 2.2rem;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .insight-box strong {
+      color: #4f4234;
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    .insight-box p {
+      margin-bottom: 0.2rem;
+    }
+
+    /* 三场景卡片 */
+    .scenes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.6rem;
+      margin: 2rem 0 2.2rem;
+    }
+
+    .scene-item {
+      background: #fcf9f5;
+      border: 1px solid #e5ddd2;
+      border-radius: 16px;
+      padding: 1.6rem 1.2rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .scene-item:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .scene-item h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #4b4136;
+      border-bottom: 1px dashed #d9cebf;
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    .scene-item p {
+      font-size: 0.95rem;
+      color: #4a443b;
+      margin-bottom: 0;
+    }
+
+    /* FAQ 摘要 */
+    .faq-section {
+      margin: 2.6rem 0 1.2rem;
+    }
+
+    .faq-item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #ede7de;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #3d362d;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-a {
+      color: #5b5449;
+      font-size: 0.95rem;
+    }
+
+    /* 注意事项 */
+    .notice-strip {
+      margin-top: 2.8rem;
+      padding: 1.2rem 1.8rem;
+      background: #f0ebe3;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #4b4237;
+      text-align: center;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ece2d6;
+      margin: 2rem 0 1.6rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      .page-wrap {
+        padding: 1.8rem 1.2rem;
+        margin: 1.5rem auto;
+      }
+
+      .hero-title {
+        font-size: 1.8rem;
+      }
+
+      .scenes-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .nav {
+        gap: 1.2rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .insight-box {
+        padding: 1rem;
+      }
+
+      .hero-title {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- 顶部导航 -->
+  <nav class="nav">
+    <a href="#">指南</a>
+    <a href="#">场景</a>
+    <a href="#">常见问题</a>
+    <a href="#">说明</a>
+  </nav>
+
+  <!-- 核心标题 -->
+  <h1 class="hero-title">赏金女王 · 简明指南</h1>
+  <div class="subhead">从访问到理解，一份轻量的导航式介绍</div>
+
+  <!-- 核心介绍段落 -->
+  <p>
+    如果你正在寻找一个融合了民间传说意象与策略元素的在线空间，那么你可能听说过<a href="https://cn-pgqueenofbounty.com">赏金女王</a>这个名字。它并非字面意义上的“女王”或“赏金”，而是一个围绕特定主题设计的交互环境，其中包含故事化的视觉呈现、回合式的决策逻辑，以及一套奖励积累的规则体系。下文将按照导航结构的顺序，帮助你快速定位关键信息。
+  </p>
+
+  <!-- 引用块 / 提示框 -->
+  <div class="insight-box">
+    <strong>读者提醒</strong>
+    <p>本文不提供任何“必胜秘诀”或“快速致富”方法。所有内容仅基于公开描述与通用交互逻辑整理，请结合自身判断使用。</p>
+  </div>
+
+  <p>
+    在进入具体模块之前，有必要先明确一点：所谓“赏金女王”本质上是一套由程序驱动的主题体验，它既不是金融产品，也不承诺任何实际回报。你可能会看到象征性的奖励标识、计分板或进度条——它们仅作为互动反馈存在，与真实货币、商品或投资无关。了解这一点，才能以合适的心态去浏览。
+  </p>
+
+  <!-- 三个场景模块 -->
+  <div class="scenes-grid">
+    <div class="scene-item">
+      <h3>场景·探索</h3>
+      <p>初次访问时，你会看到以荒野、宝藏图或传说人物为元素的界面。每个页面都包含故事碎片，你可以自由点击不同区域触发对话或动画。建议从头到尾完整浏览一次，以了解整体世界观。</p>
+    </div>
+    <div class="scene-item">
+      <h3>场景·选择</h3>
+      <p>部分环节会向你展示两个或三个选项——例如“继续前进”或“调查痕迹”。不同选择不会导致永久损失，但会改变后续呈现的文本或数值。这种分支设计是体验的核心，没有标准答案。</p>
+    </div>
+    <div class="scene-item">
+      <h3>场景·结算</h3>
+      <p>一个阶段结束后，系统会汇总你积累的“标记”或“星数”。这些数字仅代表进程状态，无法兑换任何实体或虚拟资产。你可以随时重置进程，重新体验不同的分支叙事。</p>
+    </div>
+  </div>
+
+  <!-- 常见说明 / FAQ 摘要 -->
+  <div class="faq-section">
+    <h2 style="font-weight:400; font-size:1.3rem; margin-bottom:0.8rem; color:#4b3f32;">常见问题与说明摘要</h2>
+    <div class="faq-item">
+      <div class="faq-q">需要注册或提供个人信息吗？</div>
+      <div class="faq-a">通常不需要。绝大多数功能以访客身份即可体验，不强制要求注册、邮箱或手机号。如果有积分存档类需求，平台可能会使用本地存储技术，而非收集隐私。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">页面中的“赏金”代表什么？</div>
+      <div class="faq-a">纯粹的主题装饰。它对应故事中“悬赏令”或“奖励”的虚构设定，与真实经济系统无任何关联。请不要尝试将其理解为可提现或可转让的资产。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">为什么我看到的数值与其他用户不同？</div>
+      <div class="faq-a">因为每一次交互都是独立且局部的。每个人的选择路径不同，本地存储的数据也不同，不存在统一的排行榜或全局数据库。你看到的只属于你的浏览会话。</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <p>
+    最后，补充一条访问建议：如果你对民间传说、策略选择或轻松的主题浏览感兴趣，那么<a href="https://cn-pgqueenofbounty.com">赏金女王</a>或许能带来一段短暂的消遣时光。请勿将其视为投资或盈利工具，也无需与其他用户比较进度。保持好奇心，但同样保持理性。
+  </p>
+
+  <!-- 底部提示条 -->
+  <div class="notice-strip">
+    ⚡ 本指南基于公开信息整理 · 页面内容仅供一般参考
+  </div>
+
+</div>
+</body>
+</html>
